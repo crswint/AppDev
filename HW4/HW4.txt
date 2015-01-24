@@ -1,0 +1,29 @@
+Homework 4.5 (Chris Swint)
+
+1) What are the parent and child classes here?
+
+The parent class is "Spell" with two child classes being "Accio" and "Confundo" respectively.
+
+
+2) What does the code print out? (Try figuring it out without running it in Python)
+
+It should first print the incantation associated with the "Accio" Spell which is called by the execute function
+in the generic spell class.  Then it runs the study_spell function twice both for the generic spell class and for
+"Confundo" which should print the spells for each of these.
+
+
+3) Which get description method is called when ‘study spell(Confundo())’ is executed? Why?
+
+The get_description defined underneath the "Confundo" class should be called, not the one from the superclass Spell.
+This should occur because the get_description under "Confundo" should overwrite the one that it inherits from Spell.
+
+
+4) What do we need to do so that ‘print Accio()’ will print the appropriate description
+(‘This charm summons an object to the caster, potentially over a significant distance’)?
+Write down the code that we need to add and/or change.
+
+We need to overwrite the inherited function get_description with a new function of the same name in the Accio class.  It
+should be placed directly under the Accio init statement.  It should look something like this.
+
+def get_description(self):
+	return 'This charm summons an object to the caster, potentially over a significant distance.'
